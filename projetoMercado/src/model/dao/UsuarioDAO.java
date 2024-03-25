@@ -94,4 +94,44 @@ public class UsuarioDAO {
         }
         return validar;
     }
+    public void delete(MercadinhoDTO usuario) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            stmt = conexao.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
+            stmt.setInt(1, usuario.getIdUsuario());
+            stmt.executeUpdate();
+            stmt.close();
+            conexao.close();
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+            
+     } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void update(MercadinhoDTO editar) {
+        try{
+            
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+        
+            stmt = conexao.prepareStatement("UPDATE usuario set nome = ?, senha = ?, telefone = ?, endereco = ? WHERE idusuario = ?");
+            stmt.setString(1, editar.getNome());
+            stmt.setString(2, editar.getSenha());
+            stmt.setString(3, editar.getTelefone());
+            stmt.setString(4, editar.getEndereco());
+    
+            ResultSet rs = stmt.executeQuery();
+            
+       
+            rs.close();
+            stmt.close();
+            conexao.close();
+            
+
+           } catch (SQLException e){
+            e.printStackTrace();
+        }
+    } 
 }

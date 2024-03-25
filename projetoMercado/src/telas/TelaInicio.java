@@ -14,60 +14,7 @@ public class TelaInicio extends javax.swing.JFrame {
     }
     
     public void loadDataProduct () {
-        ProdutoDAO dao = new ProdutoDAO();
-        List<MercadinhoDTO> listaProduto = dao.readProdutos();               
-        for (MercadinhoDTO p : listaProduto){            
-            // preciso a cada mudança de ID, ele popular um diferente Jpanel e seus Elementos dentro
-            if(p.getIdProduto() == 1){
-                System.out.println(p.getNome());
-                nome1.setText(nome1.getText() + p.getNome());                
-                preco1.setText(preco1.getText() + p.getPreco());
-                qtd1.setText(qtd1.getText() + p.getEstoque());
-                
-            }
-            else if(p.getIdProduto() == 2) {
-                System.out.println(p.getNome());
-                nome2.setText(nome2.getText() + p.getNome());              
-                preco2.setText(preco2.getText() + p.getPreco());
-                qtd2.setText(qtd2.getText() + p.getEstoque());              
-            }
-            else if(p.getIdProduto() == 3) {
-                System.out.println(p.getNome());
-                nome3.setText(nome3.getText() + p.getNome());                
-                preco3.setText(preco3.getText() + p.getPreco());
-                qtd3.setText(qtd3.getText() + p.getEstoque());
-            }
-            else if(p.getIdProduto() == 4) {
-                System.out.println(p.getNome());
-                nome4.setText(nome4.getText() + p.getNome());                
-                preco4.setText(preco4.getText() + p.getPreco());
-                qtd4.setText(qtd4.getText() + p.getEstoque());
-            }           
-            else if(p.getIdProduto() == 5) {
-                System.out.println(p.getNome());
-                nome5.setText(nome5.getText() + p.getNome());                
-                preco5.setText(preco5.getText() + p.getPreco());
-                qtd5.setText(qtd5.getText() + p.getEstoque());
-            }           
-            else if(p.getIdProduto() == 6) {
-                System.out.println(p.getNome());
-                nome6.setText(nome6.getText() + p.getNome());                
-                preco6.setText(preco6.getText() + p.getPreco());
-                qtd6.setText(qtd6.getText() + p.getEstoque());
-            }           
-            else if(p.getIdProduto() == 7) {
-                System.out.println(p.getNome());
-                nome7.setText(nome7.getText() + p.getNome());                
-                preco7.setText(preco7.getText() + p.getPreco());
-                qtd7.setText(qtd7.getText() + p.getEstoque());
-            }           
-            else if(p.getIdProduto() == 8) {
-                System.out.println(p.getNome());
-                nome8.setText(nome8.getText() + p.getNome());                
-                preco8.setText(preco8.getText() + p.getPreco());
-                qtd8.setText(qtd8.getText() + p.getEstoque());
-            }                                         
-        }        
+      
     }
 
 

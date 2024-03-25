@@ -8,21 +8,19 @@ package telas;
 import javax.swing.JOptionPane;
 import model.bean.MercadinhoDTO;
 import model.dao.UsuarioDAO;
-import telas.Login;
 
 /**
  *
  * @author Senai
  */
-public class Cadastro extends javax.swing.JFrame {
+public class TelaCadastro extends javax.swing.JFrame {
 MercadinhoDTO usuario = new MercadinhoDTO();
 UsuarioDAO dao = new UsuarioDAO();
     /**
-     * Creates new form Cadastro
+     * Creates new form TelaCadastro
      */
-    public Cadastro() {
+    public TelaCadastro() {
         initComponents();
-        
     }
 
     /**
@@ -52,8 +50,6 @@ UsuarioDAO dao = new UsuarioDAO();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(97, 0, 255));
 
@@ -183,7 +179,7 @@ UsuarioDAO dao = new UsuarioDAO();
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,8 +207,7 @@ UsuarioDAO dao = new UsuarioDAO();
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(1302, 693));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomeActionPerformed
@@ -234,8 +229,8 @@ UsuarioDAO dao = new UsuarioDAO();
         }else {
             System.out.println("criar");
             dao.create(usuario);
-            Login loiginDo = new Login();
-            loiginDo.setVisible(true); 
+            GerenciaUsuarios cadastro = new GerenciaUsuarios();
+            cadastro.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnCadastroActionPerformed
@@ -265,20 +260,20 @@ UsuarioDAO dao = new UsuarioDAO();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastro().setVisible(true);
+                new TelaCadastro().setVisible(true);
             }
         });
     }
