@@ -220,7 +220,9 @@ UsuarioDAO dao = new UsuarioDAO();
         String senha = new String(senhaa);
         if (dao.login(login, senha)) {
             JOptionPane.showConfirmDialog(rootPane, "Login bem sucedido", "Login", DEFAULT_OPTION, PLAIN_MESSAGE);
-
+            TelaInicio inicio = new TelaInicio();
+            inicio.setVisible(true); 
+        this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos!");
         }
